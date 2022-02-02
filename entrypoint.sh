@@ -7,8 +7,8 @@ if [ -z "${GITHUB_TOKEN}" ]; then
 fi
 
 ## Set git user to github-action
-git config --global user.name "github-actions"
-git config --global user.email "github-actions@users.noreply.github.com"
+git config --global user.name "rumenmitrev"
+git config --global user.email "rumen.mitrev@abv.bg"
 
 git show-ref # useful for debugging
 
