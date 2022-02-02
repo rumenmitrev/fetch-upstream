@@ -28,7 +28,7 @@ git fetch upstream
 
 git checkout master
 echo "merging ......"
-cat <<EOF | git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream"
+cat <<EOF | git merge --allow-unrelated-histories --abort upstream/master -v -m "fetch upstream"
 :q
 EOF
 git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream"
