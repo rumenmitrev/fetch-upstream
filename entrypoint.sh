@@ -32,7 +32,7 @@ git pull
 
 echo "merging ......"
 #git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream" --commit
-git merge --commit --allow-unrelated-histories upstream/master -v --continue
+git merge --allow-unrelated-histories upstream/master -v --ff
 
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
