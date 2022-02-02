@@ -27,6 +27,7 @@ git remote -v
 git fetch upstream
 
 # Merge the branches and commits from the upstream
+git checkout master
 git pull --rebase --autostash
 echo "merging ......"
 git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream"
