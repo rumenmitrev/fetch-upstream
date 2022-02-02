@@ -1,4 +1,5 @@
 FROM node:slim
+ENV GIT_TERMINAL_PROMPT 0
 
 RUN apt-get update
 RUN apt-get install -y git
