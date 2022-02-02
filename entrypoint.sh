@@ -28,6 +28,9 @@ git fetch upstream
 
 git checkout master
 echo "merging ......"
+cat <<EOF | git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream"
+:q
+EOF
 git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream"
 
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
