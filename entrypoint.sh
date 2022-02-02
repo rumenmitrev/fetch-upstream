@@ -28,7 +28,7 @@ git fetch upstream
 
 # Merge the branches and commits from the upstream
 #git pull --rebase --autostash
-#git checkout master
+git checkout origin
 echo "merging ......"
 git merge --allow-unrelated-histories upstream/origin -v -m "fetch upstream"
 
