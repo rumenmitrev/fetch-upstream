@@ -9,6 +9,8 @@ fi
 ## Set git user to github-action
 git config --global user.name "rumenmitrev"
 git config --global user.email "rumen.mitrev@abv.bg"
+git config pull.rebase true
+git config rebase.autoStash true
 
 git show-ref # useful for debugging
 
@@ -28,10 +30,9 @@ git fetch upstream
 
 git checkout master
 echo "merging ......"
-cat <<EOF | git merge --allow-unrelated-histories --abort upstream/master -v -m "fetch upstream"
+cat <<EOF | git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream"
 :q
 EOF
-git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream"
 
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
