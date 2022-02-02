@@ -27,10 +27,9 @@ git remote -v
 git fetch upstream
 
 # Merge the branches and commits from the upstream
-#git pull --rebase --autostash
-git checkout origin
+git pull --rebase --autostash
 echo "merging ......"
-git merge --allow-unrelated-histories upstream/origin -v -m "fetch upstream"
+git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream"
 
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
