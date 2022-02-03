@@ -9,8 +9,6 @@ fi
 ## Set git user to github-action
 git config --global user.name "rumenmitrev"
 git config --global user.email "rumen.mitrev@abv.bg"
-git config pull.rebase true
-git config rebase.autoStash true
 
 git show-ref # useful for debugging
 
@@ -28,7 +26,9 @@ git fetch upstream
 
 # Merge the branches and commits from the upstream
 git checkout master
-git pull
+git config pull.rebase true
+git config rebase.autoStash true
+git pull --rebase
 
 echo "merging ......"
 #git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream" --commit
