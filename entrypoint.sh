@@ -26,13 +26,12 @@ git fetch upstream
 
 # Merge the branches and commits from the upstream
 git checkout master
-git config pull.rebase true
-git config rebase.autoStash true
-git pull --rebase
+git add .
 
 echo "merging ......"
 #git merge --allow-unrelated-histories upstream/master -v -m "fetch upstream" --commit
-git merge --allow-unrelated-histories upstream/master -v --ff
+#git merge --allow-unrelated-histories upstream/master -v --ff
+git merge --allow-unrelated-histories upstream/master -v
 
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
